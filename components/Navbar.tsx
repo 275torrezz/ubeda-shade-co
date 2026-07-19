@@ -12,16 +12,18 @@ const links = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-3" aria-label="Ubeda Shade Co. home">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#111111] text-sm font-semibold text-white">
-            US
+          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-[#111111]">
+            <img
+              src="/company-images/icon.png"
+              alt="Ubeda Shade Co. icon"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div>
             <p className="text-base font-semibold text-[#111111]">Ubeda Shade Co.</p>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#5f5f5f]">
-              Solar Screens
-            </p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#5f5f5f]">SOLAR SCREENS</p>
           </div>
         </Link>
 

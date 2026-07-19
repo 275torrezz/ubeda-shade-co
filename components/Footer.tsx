@@ -14,15 +14,18 @@ export function Footer() {
     <footer className="border-t border-black/5 bg-[#111111] py-16 text-white/80">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.1fr_0.7fr_0.7fr] lg:px-8">
         <div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-sm font-semibold text-[#111111]">
-              US
+          <Link href="#home" className="flex items-center" aria-label="Ubeda Shade Co. home">
+            <div className="flex h-14 w-32 items-center justify-center overflow-hidden rounded-full bg-white/90 p-1 sm:h-16 sm:w-36">
+              <img
+                src="/company-images/logo.png?v=2"
+                alt="Ubeda Shade Co. logo"
+                width={220}
+                height={88}
+                loading="eager"
+                className="h-full w-full object-contain"
+              />
             </div>
-            <div>
-              <p className="text-base font-semibold text-white">Ubeda Shade Co.</p>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">Solar Screens</p>
-            </div>
-          </div>
+          </Link>
           <p className="mt-6 max-w-md text-base leading-7 text-white/70">
             Custom solar screen solutions that improve comfort, lower heat, and elevate the look of your property.
           </p>

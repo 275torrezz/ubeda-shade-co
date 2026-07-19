@@ -14,7 +14,7 @@ const points = [
 
 export function WhyChooseUs() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8">
       <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
           initial={{ opacity: 0, x: -18 }}
@@ -29,7 +29,7 @@ export function WhyChooseUs() {
             width={1200}
             height={900}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="h-full min-h-[420px] w-full object-cover"
+            className="h-full min-h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]"
           />
         </motion.div>
 

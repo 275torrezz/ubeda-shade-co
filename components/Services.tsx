@@ -40,7 +40,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-[#F5F5F5] py-24">
+    <section id="services" className="bg-[#F5F5F5] py-28 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           eyebrow="Services"
@@ -48,7 +48,7 @@ export function Services() {
           description="From homes to commercial spaces, our team delivers custom solar screen systems with exceptional fit, finish, and performance."
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

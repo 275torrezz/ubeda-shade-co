@@ -29,14 +29,14 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8">
       <SectionHeading
         eyebrow="Benefits"
         title="Comfort designed around modern living"
         description="Every installation is tailored to your home, climate, and style so the result feels effortless from day one and built to last."
       />
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {benefits.map((benefit, index) => {
           const Icon = benefit.icon;
           return (

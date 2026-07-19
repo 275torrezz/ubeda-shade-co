@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ubedashadeco.com"),
   alternates: { canonical: "https://ubedashadeco.com" },
+  icons: {
+    icon: "/company-images/logo.png?v=2",
+    shortcut: "/company-images/logo.png?v=2",
+    apple: "/company-images/logo.png?v=2",
+  },
   openGraph: {
     title: "Ubeda Shade Co. | Premium Solar Screen Installation",
     description:

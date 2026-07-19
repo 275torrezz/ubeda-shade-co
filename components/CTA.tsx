@@ -3,7 +3,7 @@ import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8">
       <div className="rounded-[40px] bg-[#111111] p-8 text-white shadow-[0_45px_110px_-40px_rgba(0,0,0,0.7)] sm:p-12 lg:p-16">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
@@ -41,7 +41,7 @@ export function CTA() {
               </div>
               <input className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Email" aria-label="Email" />
               <textarea className="min-h-[140px] w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Tell us about your project" aria-label="Project details" />
-              <button className="premium-button inline-flex items-center justify-center gap-2 rounded-full bg-[#2E7D32] px-6 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-[#256b28]" type="submit">
+              <button className="premium-button inline-flex items-center justify-center gap-2 rounded-full bg-[#2E7D32] px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#256b28]" type="submit">
                 Request Your Free Estimate
                 <ArrowRight className="h-4 w-4" />
               </button>
