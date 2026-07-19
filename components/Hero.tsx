@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden bg-[#111111] text-white">
       <Image
-        src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80"
+        src="/company-images/hero-solar-screen.jpg"
         alt="Modern Texas home exterior with premium solar screens installed on large windows"
         fill
         priority

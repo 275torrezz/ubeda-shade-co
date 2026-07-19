@@ -6,25 +6,25 @@ import { SectionHeading } from "./SectionHeading";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    src: "/company-images/gallery-1.jpg",
     alt: "Premium patio shade screen installation on a modern home exterior",
     className: "md:col-span-2 md:row-span-2",
     label: "Patio Shade Screens",
   },
   {
-    src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+    src: "/company-images/gallery-2.jpg",
     alt: "Exterior residential project with solar screens covering large windows",
     className: "",
     label: "Window Coverage",
   },
   {
-    src: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80",
+    src: "/company-images/gallery-3.jpg",
     alt: "Contemporary home exterior with solar screens for heat reduction",
     className: "",
     label: "Energy Efficiency",
   },
   {
-    src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+    src: "/company-images/gallery-4.jpg",
     alt: "Professional installation crew fitting solar screens on a residential property",
     className: "md:col-span-2",
     label: "Professional Installation",
@@ -49,7 +49,7 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className={`group mb-4 block w-full break-inside-avoid overflow-hidden rounded-[30px] border border-black/5 shadow-[0_24px_70px_-36px_rgba(0,0,0,0.35)] ${image.className}`}
+              className={`group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-[30px] border border-black/5 shadow-[0_24px_70px_-36px_rgba(0,0,0,0.35)] ${image.className}`}
             >
               <Image
                 src={image.src}
@@ -62,11 +62,6 @@ export function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
               <div className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/35 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur">
                 {image.label}
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition duration-300 group-hover:opacity-100">
-                <span className="rounded-full border border-white/40 bg-white/20 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white backdrop-blur">
-                  Replace with real project photo
-                </span>
               </div>
             </motion.div>
           ))}

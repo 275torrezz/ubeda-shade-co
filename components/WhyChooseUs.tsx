@@ -24,7 +24,7 @@ export function WhyChooseUs() {
           className="overflow-hidden rounded-[36px] shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
         >
           <Image
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80"
+            src="/company-images/why-choose-us.jpg"
             alt="Modern Texas home exterior with custom solar screens improving comfort and energy efficiency"
             width={1200}
             height={900}
