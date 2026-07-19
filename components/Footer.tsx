@@ -22,7 +22,7 @@ export function Footer() {
           >
             <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full">
               <img
-                src="/company-images/footer-icon.png"
+                src="/company-images/icon.png"
                 alt="Ubeda Shade Co."
                 className="h-full w-full object-contain"
               />
@@ -78,12 +78,9 @@ export function Footer() {
 
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-[#8be28f]" />
-              <a
-                href="mailto:ubedashadeco@gmail.com"
-                className="transition hover:text-white"
-              >
+              <span className="transition hover:text-white">
                 ubedashadeco@gmail.com
-              </a>
+              </span>
             </li>
           </ul>
 

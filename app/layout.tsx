@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Ubeda Shade Co. | Premium Solar Screen Installation in DFW",
   description:
-    "Professional custom solar screen installation in Dallas-Fort Worth. Reduce heat, lower energy bills, increase privacy, and protect your home.",
+    "Professional custom solar screen installation in Dallas-Fort Worth. Request a free estimate online and connect with Ubeda Shade Co. today.",
   keywords: [
     "solar screens",
     "Dallas-Fort Worth",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ubeda Shade Co. | Premium Solar Screen Installation",
     description:
-      "Premium custom solar screens for homes and businesses across Dallas-Fort Worth.",
+      "Premium custom solar screens for homes and businesses across Dallas-Fort Worth. Request a free estimate online.",
     url: "https://ubedashadeco.com",
     siteName: "Ubeda Shade Co.",
     locale: "en_US",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ubeda Shade Co. | Premium Solar Screen Installation",
     description:
-      "Professional custom solar screen installation that lowers heat and boosts comfort.",
+      "Professional custom solar screen installation that lowers heat and boosts comfort. Request a free estimate online.",
   },
   robots: {
     index: true,

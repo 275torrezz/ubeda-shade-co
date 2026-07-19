@@ -12,7 +12,7 @@ const links = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="#home"
           className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
@@ -38,7 +38,7 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-8 text-sm font-medium text-[#3f3f3f] md:flex"
+          className="hidden items-center gap-8 text-sm font-medium text-[#3f3f3f] lg:flex"
           aria-label="Primary navigation"
         >
           {links.map((link) => (
@@ -55,7 +55,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="tel:(469)321-9413"
-            className="hidden items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-[#111111] transition hover:border-[#2E7D32] hover:text-[#2E7D32] lg:flex"
+            className="hidden items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-[#111111] transition hover:border-[#2E7D32] hover:text-[#2E7D32] xl:flex"
           >
             <Phone className="h-4 w-4" />
             (469) 321-9413
@@ -63,7 +63,7 @@ export function Navbar() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#111111] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#2E7D32]"
+            className="hidden items-center gap-2 rounded-full bg-[#111111] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#2E7D32] sm:inline-flex"
           >
             Get Free Estimate
             <ArrowRight className="h-4 w-4" />

@@ -1,7 +1,60 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 
+const INITIAL_FORM = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+};
+
 export function CTA() {
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus("idle");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "b2306c86-d29e-4325-bc9a-3fd2b4729c2c",
+          ...form,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setForm(INITIAL_FORM);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8">
       <div className="rounded-[40px] bg-[#111111] p-8 text-white shadow-[0_45px_110px_-40px_rgba(0,0,0,0.7)] sm:p-12 lg:p-16">
@@ -34,17 +87,61 @@ export function CTA() {
           </div>
 
           <div className="rounded-[30px] bg-white/10 p-8 backdrop-blur">
-            <form className="space-y-4" action="mailto:ubedashadeco@gmail.com" method="post" encType="text/plain">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <input type="hidden" name="access_key" value="b2306c86-d29e-4325-bc9a-3fd2b4729c2c" />
               <div className="grid gap-4 sm:grid-cols-2">
-                <input className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Name" aria-label="Name" />
-                <input className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Phone" aria-label="Phone" />
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50"
+                  placeholder="Name"
+                  aria-label="Name"
+                  required
+                />
+                <input
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50"
+                  placeholder="Phone"
+                  aria-label="Phone"
+                  required
+                />
               </div>
-              <input className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Email" aria-label="Email" />
-              <textarea className="min-h-[140px] w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50" placeholder="Tell us about your project" aria-label="Project details" />
-              <button className="premium-button inline-flex items-center justify-center gap-2 rounded-full bg-[#2E7D32] px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#256b28]" type="submit">
-                Request Your Free Estimate
+              <input
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50"
+                placeholder="Email"
+                aria-label="Email"
+                required
+              />
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                className="min-h-[140px] w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-white/50"
+                placeholder="Tell us about your project"
+                aria-label="Project details"
+                required
+              />
+              <button
+                className="premium-button inline-flex items-center justify-center gap-2 rounded-full bg-[#2E7D32] px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#256b28]"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Request Your Free Estimate"}
                 <ArrowRight className="h-4 w-4" />
               </button>
+              {status === "success" && (
+                <p className="text-sm text-[#8be28f]">Thanks! Your request has been received. We’ll be in touch soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-300">Something went wrong. Please call us directly at (469) 321-9413.</p>
+              )}
             </form>
           </div>
         </div>
