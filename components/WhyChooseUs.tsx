@@ -36,9 +36,6 @@ export function WhyChooseUs() {
           <h2 className="text-3xl font-semibold tracking-tight text-[#111111] sm:text-4xl">
             Why Homeowners Choose Ubeda Shade Co.
           </h2>
-          <p className="mt-5 text-lg leading-8 text-[#565656]">
-            Premium solar screens designed for comfort, durability, and a cleaner look—installed with precision and backed by honest service.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-4 md:grid-cols-2">

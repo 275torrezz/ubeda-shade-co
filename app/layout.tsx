@@ -23,19 +23,28 @@ export const metadata: Metadata = {
     apple: "/company-images/logo.png?v=2",
   },
   openGraph: {
-    title: "Ubeda Shade Co. | Premium Solar Screen Installation",
+    title: "Ubeda Shade Co. | Premium Solar Screens for DFW Homes",
     description:
-      "Premium custom solar screens for homes and businesses across Dallas-Fort Worth. Request a free estimate online.",
+      "Custom solar screens for patios, windows, and large openings in Dallas-Fort Worth—crafted for comfort, durability, and a refined finish.",
     url: "https://ubedashadeco.com",
     siteName: "Ubeda Shade Co.",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/company-images/social-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Ubeda Shade Co. logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ubeda Shade Co. | Premium Solar Screen Installation",
+    title: "Ubeda Shade Co. | Premium Solar Screens for DFW Homes",
     description:
-      "Professional custom solar screen installation that lowers heat and boosts comfort. Request a free estimate online.",
+      "Custom solar screens for patios, windows, and large openings in Dallas-Fort Worth—crafted for comfort, durability, and a refined finish.",
+    images: ["/company-images/social-preview.png"],
   },
   robots: {
     index: true,

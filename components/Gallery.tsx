@@ -36,7 +36,7 @@ export function Gallery() {
     <section id="gallery" className="bg-[#F5F5F5] py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Gallery"
+          eyebrow="Our Work"
           title="A refined look that performs beautifully"
           description="Our installations balance comfort, architecture, and long-term durability in every detail."
         />
