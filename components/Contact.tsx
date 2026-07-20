@@ -9,6 +9,7 @@ const INITIAL_FORM = {
   email: "",
   address: "",
   windows: "",
+  preferredMaterial: "",
   message: "",
 };
 
@@ -18,7 +19,7 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -44,10 +45,7 @@ export function Contact() {
 
       const data = await response.json();
 
-console.log("Status:", response.status);
-console.log("Response:", data);
-
-if (data.success) {
+      if (data.success) {
         setStatus("success");
         setForm(INITIAL_FORM);
       } else {
@@ -186,7 +184,7 @@ if (data.success) {
 
             <div>
               <label className="mb-2 block text-sm font-semibold text-[#111111]">
-                Number of Windows
+                How many windows?
               </label>
               <input
                 type="number"
@@ -196,6 +194,31 @@ if (data.success) {
                 className="w-full rounded-2xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-[#111111] outline-none"
                 placeholder="e.g. 8"
               />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-[#111111]">
+                Preferred Screen Material
+              </label>
+              <select
+                name="preferredMaterial"
+                value={form.preferredMaterial}
+                onChange={handleChange}
+                required
+                className="w-full rounded-2xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-[#111111] outline-none"
+              >
+                <option value="" disabled>
+                  Select an option
+                </option>
+                <option value="SunTex 80">SunTex 80</option>
+                <option value="SunTex 90">SunTex 90</option>
+                <option value="Not Sure (Recommend the best option)">
+                  Not Sure (Recommend the best option)
+                </option>
+              </select>
+              <p className="mt-2 text-sm leading-6 text-[#6b6b6b]">
+                SunTex 80 offers more natural light with excellent heat reduction. SunTex 90 provides maximum heat blocking and additional daytime privacy.
+              </p>
             </div>
 
             <div className="md:col-span-2">

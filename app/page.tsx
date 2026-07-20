@@ -10,7 +10,6 @@ import { EnergySavings } from "@/components/EnergySavings";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
-import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
@@ -31,7 +30,6 @@ export default function Home() {
         <WhyChooseUs />
         <Testimonials />
         <FAQ />
-        <CTA />
         <Contact />
       </main>
       <Footer />

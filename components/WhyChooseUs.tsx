@@ -1,64 +1,65 @@
 "use client";
 
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const points = [
-  "Professional Craftsmanship",
-  "Premium Materials",
-  "Honest Pricing",
-  "Customer Satisfaction",
-  "Fast Turnaround",
+const features = [
+  {
+    title: "Precision Fit",
+    description: "Custom-built for every window, patio, and oversized opening.",
+  },
+  {
+    title: "Premium Materials",
+    description: "Built to withstand Texas heat while maintaining a refined appearance.",
+  },
+  {
+    title: "Honest Pricing",
+    description: "Clear estimates with no pressure and no hidden fees.",
+  },
+  {
+    title: "Fast Installation",
+    description: "From consultation to installation, we keep the process simple and efficient.",
+  },
 ];
 
 export function WhyChooseUs() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8">
-      <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <motion.div
-          initial={{ opacity: 0, x: -18 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-          className="overflow-hidden rounded-[36px] shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
-        >
-          <Image
-            src="/company-images/why-choose-us.jpg"
-            alt="Modern Texas home exterior with custom solar screens improving comfort and energy efficiency"
-            width={1200}
-            height={900}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="h-full min-h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]"
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 18 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#2E7D32]">
-            Why choose us
-          </p>
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="rounded-[40px] border border-black/5 bg-[#f7f7f2] p-8 shadow-[0_28px_80px_-42px_rgba(0,0,0,0.24)] sm:p-12 lg:p-16"
+      >
+        <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-[#111111] sm:text-4xl">
-            Built for comfort, quality, and lasting value.
+            Why Homeowners Choose Ubeda Shade Co.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-[#565656]">
-            We believe premium home comfort should feel elevated, transparent, and effortless from the first conversation through installation.
+          <p className="mt-5 text-lg leading-8 text-[#565656]">
+            Premium solar screens designed for comfort, durability, and a cleaner look—installed with precision and backed by honest service.
           </p>
+        </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {points.map((point) => (
-              <div key={point} className="flex items-center gap-3 rounded-2xl border border-black/5 bg-[#f7f7f2] p-4 transition-transform duration-300 hover:-translate-y-0.5">
-                <CheckCircle2 className="h-5 w-5 flex-none text-[#2E7D32]" />
-                <span className="text-base font-medium text-[#111111]">{point}</span>
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_16px_44px_-28px_rgba(0,0,0,0.2)]"
+            >
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2E7D32]/10 text-[#2E7D32]">
+                  <CheckCircle2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#111111]">{feature.title}</h3>
+                  <p className="mt-2 text-base leading-7 text-[#565656]">{feature.description}</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
