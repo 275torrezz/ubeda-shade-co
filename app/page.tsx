@@ -7,7 +7,6 @@ import { OurProcess } from "@/components/OurProcess";
 import { ServiceAreas } from "@/components/ServiceAreas";
 import { Gallery } from "@/components/Gallery";
 import { EnergySavings } from "@/components/EnergySavings";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
@@ -27,7 +26,6 @@ export default function Home() {
         <ServiceAreas />
         <Gallery />
         <EnergySavings />
-        <WhyChooseUs />
         <Testimonials />
         <FAQ />
         <Contact />
