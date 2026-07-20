@@ -44,7 +44,10 @@ export function Contact() {
 
       const data = await response.json();
 
-      if (data.success) {
+console.log("Status:", response.status);
+console.log("Response:", data);
+
+if (data.success) {
         setStatus("success");
         setForm(INITIAL_FORM);
       } else {
